@@ -4,7 +4,7 @@ const listeKeycode = touchesS.map(touche => touche.dataset.key);
 const ecran = document.querySelector('.ecran');
 
 document.addEventListener('keydown', (e) => {
-    const valeur = e.keyCode.toString();
+   const valeur = e.keyCode.toString();
     calculer(valeur)
 })
 
@@ -30,8 +30,23 @@ const calculer = (valeur) => {
             break;
 
             case'251' :
-            Res=Math.sqrt();
-            ecran.textContent = Res;
+            calcul=Math.sqrt(ecran.textContent);
+            ecran.textContent = calcul;
+            break;
+            
+            case '222':
+            calcul=Math.tan(ecran.textContent);
+            ecran.textContent = calcul;
+            break;
+
+            case '111' :
+            calcul=Math.log2(ecran.textContent);
+            ecran.textContent = calcul;
+            break;
+
+            case '112' :
+            calcul=Math.cos(ecran.textContent);
+            ecran.textContent = calcul;
             break;
 
             case'169':
@@ -44,15 +59,6 @@ const calculer = (valeur) => {
         }
         
     }
-    
-    function history(){
-        if (sessionStorage.getItem('Autosave')){
-            resultat.valeur = sessionStorage.getItem('Autosave');
-        }
-        sessionStorage.setItem('Autosave', resultat.valeur);
-        console.log(resultat);
-    } 
-    
   
 
     window.addEventListener('error', (e) => {
